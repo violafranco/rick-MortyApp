@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import React, { useEffect, useState } from 'react';
+import Header from './components/Header';
+import Main from './components/Main';
+import Pagination from './components/Pagination';
+import styled from 'styled-components';
 
-function App() {
+
+const App = () => {
+
+  const [character, setCharacters] = useState();
+  const [info, setInfo] = useState({});
+
+  const initialUrl = 'https://rickandmortyapi.com/api/character';
+
+  const fetchCharters = (url) => {
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {setCharacters(data.results); setInfo(data.info)})
+      .catch(error => console.log(error))
+  }
+
+  const onAnterior = () => {
+    fetchCharters(info.prev)
+  }
+
+  const onSiguiente = () => {
+    fetchCharters(info.next)
+  }
+
+  useEffect(() => {
+    fetchCharters(initialUrl)
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Mains>
+        <Pagination character={info.pages} prev={info.prev} next={info.next} onAnterior={onAnterior} onSiguiente={onSiguiente}/>
+        <Main character={character} />
+      </Mains>
+    </>
   );
 }
+
+const Mains = styled.div`
+  background: radial-gradient(circle, rgba(1,171,179,1) 34%, rgba(0,99,119,1) 100%);
+`
 
 export default App;

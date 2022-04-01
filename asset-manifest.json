@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/rick-MortyApp/static/css/main.57fddfd2.css",
+    "main.js": "/rick-MortyApp/static/js/main.6160cb3f.js",
+    "static/media/logo.png": "/rick-MortyApp/static/media/logo.9572ed0d08bc66bd39c5.png",
+    "index.html": "/rick-MortyApp/index.html",
+    "main.57fddfd2.css.map": "/rick-MortyApp/static/css/main.57fddfd2.css.map",
+    "main.6160cb3f.js.map": "/rick-MortyApp/static/js/main.6160cb3f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.57fddfd2.css",
+    "static/js/main.6160cb3f.js"
+  ]
+}

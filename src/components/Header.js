@@ -8,7 +8,7 @@ const Header = () => {
     return ( 
     <Container>
         <DivOneH>
-            <a href='/'><Image src={logo}></Image></a>
+            <a href='#'><Image src={logo}></Image></a>
         </DivOneH>
 
         <DivTwoH>
@@ -35,6 +35,13 @@ const Image = styled.img`
     transition: all .2s;
     &:active{
         transform: scale(.98);
+    }
+
+    @media (max-width: 768px) {
+        width: 18%; 
+    }
+    @media (max-width: 480px) {
+        width: 26%; 
     }
 `
 

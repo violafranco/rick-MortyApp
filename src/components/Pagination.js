@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Colors } from '../theme/themes';
 
-const Pagination = ({prev, next, onAnterior, onSiguiente, character}) => {
+const Pagination = ({pages, prev, next, onAnterior, onSiguiente}) => {
 
     const handleAnterior = () => {
         onAnterior();

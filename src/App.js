@@ -10,13 +10,18 @@ const App = () => {
 
   const [character, setCharacters] = useState();
   const [info, setInfo] = useState({});
+  const [pages, setPages] = useState({})
 
   const initialUrl = 'https://rickandmortyapi.com/api/character';
 
   const fetchCharters = (url) => {
     fetch(url)
       .then(response => response.json())
-      .then(data => {setCharacters(data.results); setInfo(data.info)})
+      .then(data => 
+      {
+        setCharacters(data.results);
+        setInfo(data.info)
+      })
       .catch(error => console.log(error))
   }
 
@@ -36,7 +41,13 @@ const App = () => {
     <>
       <Header />
       <Mains>
-        <Pagination character={info.pages} prev={info.prev} next={info.next} onAnterior={onAnterior} onSiguiente={onSiguiente}/>
+        <Pagination 
+          prev={info.prev} 
+          next={info.next} 
+          onAnterior={onAnterior} 
+          onSiguiente={onSiguiente}
+        />
+
         <Main character={character} />
       </Mains>
     </>

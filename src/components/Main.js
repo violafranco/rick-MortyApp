@@ -35,7 +35,7 @@ const Container = styled.div`
 const Card = styled.div`
     background-color: rgba(34, 40, 49, 0.8);
     width: 20%;
-    height: 22em;
+    height: 20%;
     margin: 1em;
     text-align: center;
     color: ${Colors.white};
@@ -49,12 +49,26 @@ const Card = styled.div`
         transform: scale(1.05);
         box-shadow: 2px 10px 38px 0px rgba(255,255,255,0.3);
     }
+
+    @media (max-width: 768px) {
+        width: 40%; 
+        height: 20%;
+    }
+    @media (max-width: 480px) {
+        width: 43%; 
+        margin: .3em;
+        height: 20%;
+    }
 `
 
 const ImageCard = styled.img`
     width: 85%;
     margin-top: 1em;
     border-radius: 10px;
+
+    @media (max-width: 768px) {
+        width: 70%; 
+    }
 `
 
 const Name = styled.h3`
